@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>varmiguemunoz-api</title>
+  <link rel="icon" href="./icon-express-app1.png" type="image/x-icon">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="container">
+
+<div class="code-container">
+  <h1 class="title">GET/ POST/ DELETE/ PUT</h1>
+  <a href="https://github.com/varmiguemunoz/Express-app/blob/main/README.md"></a>
+  <div class="get-container">
+    <p class="get-url">[GET] https://varmiguemunoz-api.vercel.app/api/v1/products </p>
+  </div>
+</a>
+<div class="code-editor">
+    <div class="header">
+      <span class="title">Products.router.js</span>
+     <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 6L18 18" stroke="#4C4F5A" stroke-width="2" stroke-linecap="round"></path> <path d="M18 6L6 18" stroke="#4C4F5A" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+    </div>
+    <div class="editor-content">
+      <code class="code">
+        <p><span class="color-0">const router = express.Router(); </span></p>
+
+        <p class="property">
+          <span class="color-2">router.get</span><span>(</span>
+          <span class="color-1">'/', async (req, res, next)</span><span> => {</span>
+        </p>
+        <p class="property">
+          <span class="color-2">try</span>{
+              const products = <span>
+          </span>
+          <span class="color-2">await services.find()</span>;
+          <span class="color-1">res.json(products)</span>;
+        </p>
+        <p class="property">
+          <span class="color-2">  } catch (error)
+           </span><span>{</span>
+          <span class="color-1">
+            next(error)
+         <span class=""> }</span>
+        </p>
+        <p class="property">
+          <span class="color-2">})</span>
+        </p>
+      </code>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+
+
+</body>
+
+</html>

@@ -1,11 +1,11 @@
 const express = require ('express');
+const path = require('path');
 const cors = require ('cors')
 const routerApi = require('./routes')
 const {logErrors, errorHandler, boomErrorHandler} = require('./middlewares/error.handler')
 
-
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const url = `http://localhost:${port}`
 
 //middlerwares donde recibimos la informacion de un post en nuestra api
@@ -27,9 +27,12 @@ app.use(cors());
 
 // app.use(cors(options));
 
-app.get('/api', (req, res) => {
-  res.send('Welcome!')
-})
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta de inicio
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 routerApi(app)
 
