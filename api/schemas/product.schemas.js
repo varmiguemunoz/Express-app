@@ -1,23 +1,27 @@
 //validaciones que se juntan en una funcion en los middlewares
-const joi = require('joi');
+const Joi = require('joi');
 
-const id = joi.string().uuid();
-const name = joi.string().min(3).max(15);
-const price = joi.number().integer().min(10);
-const image = joi.string().uri();
+const id = Joi.number().integer();
+const name = Joi.string().min(3).max(15);
+const price = Joi.number().integer().min(10);
+const image = Joi.string().uri();
+const description = Joi.string().min(3).max(200);;
 
-const createProductSchema = joi.object({
+const createProductSchema = Joi.object({
   name: name.required(),
   price: price.required(),
-  image: image.required()
+  image: image.required(),
+  description: description
 })
 
-const updateProductSchema = joi.object({
+const updateProductSchema = Joi.object({
   name: name,
-  price: price
+  price: price,
+  image: image.required(),
+  description: description.required()
 })
 
-const getProductSchema = joi.object({
+const getProductSchema = Joi.object({
   id: id.required(),
 })
 

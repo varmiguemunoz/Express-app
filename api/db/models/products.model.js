@@ -6,7 +6,7 @@ const productSchema = {
 
   id: {
     allowNul: false,
-    utoIncrement: true,
+    autoIncrement: true,
     primaryKey: true,
     type: DataTypes.INTEGER
   },
